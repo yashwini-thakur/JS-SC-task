@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+    <script src="task1.js"></script>
+    <style>
+      form {
+        padding: 15px;
+        margin-left: 400px;
+        margin-right: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>Fill Details</legend>
+        <label for="fname">Name:</label>
+        <input type="text" name="fname" id="fname" placeholder="First name" />
+        <br /><br />
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          name="email"
+          id="mail"
+          placeholder="example123@gmail.com"
+        />
+        <br /><br />
+        <label for="num">Contact Number:</label>
+        <input type="number" name="num" id="num" placeholder="Phone Number" />
+        <br /><br />
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" placeholder="Age" />
+        <br /><br />
+        <label for="address">Address:</label>
+        <input type="text" name="address" id="address" placeholder="Address" />
+        <br /><br />
+        <label for="gender">Gender:</label>
+        <input type="radio" value="Male" id="male" name="gender" />
+        Male
+        <input type="radio" value="Female" id="female" name="gender" />Female
+        <br /><br />
+        <input type="submit" onclick="conditions()" />
+      </fieldset>
+    </form>
+  </body>
+</html>

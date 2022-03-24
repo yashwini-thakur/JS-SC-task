@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3</title>
+    <style>
+      form {
+        margin-left: 400px;
+        margin-right: 400px;
+        font-size: x-large;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <label
+          >Password :
+          <input
+            name="password"
+            id="password"
+            type="password"
+            onkeyup="check();"
+          />
+        </label>
+        <br /><br />
+        <label
+          >Confirm password:
+          <input
+            type="password"
+            name="confirm_password"
+            id="confirm_password"
+            onkeyup="check();"
+          />
+          <br /><br />
+          <span id="message"></span>
+        </label>
+      </fieldset>
+    </form>
+    <script>
+      var check = function () {
+        if (
+          document.getElementById("password").value ==
+          document.getElementById("confirm_password").value
+        ) {
+          document.getElementById("message").style.color = "green";
+          document.getElementById("message").innerHTML = "Matching";
+        } else {
+          document.getElementById("message").style.color = "red";
+          document.getElementById("message").innerHTML = "Not matching";
+        }
+      };
+    </script>
+  </body>
+</html>

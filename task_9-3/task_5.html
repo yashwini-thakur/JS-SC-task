@@ -1,0 +1,37 @@
+<!-- From the array of numbers, choose even double even numbers and compute the sum
+using Array's filter, map and reduce methods. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 5</title>
+  </head>
+  <body>
+    <h1>Please check the output in console.</h1>
+    <h1>Task 5</h1>
+    <script>
+      const num = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+      console.log("Original array", num);
+      function even(n) {
+        if (n % 2 == 0) {
+          return n;
+        }
+      }
+      const even_num = num.filter(even);
+      console.log("Even No:", even_num);
+      function double(n) {
+        return n * 2;
+      }
+      const double_num = even_num.map(double);
+      console.log("Double of even No:", double_num);
+
+      function sum(a, b) {
+        return a + b;
+      }
+      const final_sum = double_num.reduce(sum);
+      console.log("Final Answer:", final_sum);
+    </script>
+  </body>
+</html>

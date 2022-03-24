@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 4</title>
+  </head>
+  <body>
+    <h2>Please check the output in console.</h2>
+    <script>
+      orgarr = [0, 1, false, 2, undefined, "", 3, null];
+      console.log("Original array", orgarr);
+      function filter_array(test_array) {
+        var index = -1,
+          arr_length = test_array ? test_array.length : 0,
+          resIndex = -1,
+          result = [];
+
+        while (++index < arr_length) {
+          var value = test_array[index];
+
+          if (value) {
+            result[++resIndex] = value;
+          }
+        }
+
+        return result;
+      }
+      console.log("Expected Array", filter_array(orgarr));
+    </script>
+  </body>
+</html>

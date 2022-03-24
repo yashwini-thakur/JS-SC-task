@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2</title>
+    <style>
+      fieldset {
+        margin-left: 400px;
+        margin-right: 400px;
+        font-size: large;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      name="password"
+      id="password"
+      type="text"
+      size="15"
+      maxlength="100"
+      onkeyup="passwordChanged();"
+    />
+    <span id="strength">Type Password</span>
+
+    <script>
+      function passwordChanged() {
+        var strength = document.getElementById("strength");
+        var strongRegex = new RegExp(
+          "^(?=.{14,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$",
+          "g"
+        );
+        var mediumRegex = new RegExp(
+          "^(?=.{10,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$",
+          "g"
+        );
+        var enoughRegex = new RegExp("(?=.{8,}).*", "g");
+        var pwd = document.getElementById("password");
+        if (pwd.value.length == 0) {
+          strength.innerHTML = "Type Password";
+        } else if (false == enoughRegex.test(pwd.value)) {
+          strength.innerHTML = "More Characters";
+        } else if (strongRegex.test(pwd.value)) {
+          strength.innerHTML = '<span style="color:green">Strong!</span>';
+        } else if (mediumRegex.test(pwd.value)) {
+          strength.innerHTML = '<span style="color:orange">Medium!</span>';
+        } else {
+          strength.innerHTML = '<span style="color:red">Weak!</span>';
+        }
+      }
+    </script>
+  </body>
+</html>
+
+<!-- <body>
+    <form>
+      <fieldset>
+        <label for="pwd">Enter Password</label>
+        <input type="password" name="pwd" id="pwd" />
+        <input type="submit" onclick="strength(); event.preventDefault()" />
+      </fieldset>
+    </form>
+    <span id="result"></span>
+
+    <script>
+      function strength() {
+        var timeout;
+        var password = document.getElementById("pwd").value;
+        var result = document.getElementById("result");
+        var strongPassword = new RegExp(
+          "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})"
+        );
+        var mediumPassword = new RegExp(
+          "((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))"
+        );
+
+        function strengthChecker(passwordParameter) {
+          if (strongPassword.test(passwordParameter)) {
+            result.style.backgroundColor = "green";
+            result.textContent = "Strong";
+          } else if (mediumPassword.test(passwordParameter)) {
+            result.style.backgroundColor = "blue";
+            result.textContent = "Medium";
+          } else {
+            result.style.backgroundColor = "red";
+            result.textContent = "Weak";
+          }
+        }
+        password.addEventListener("input", () => {
+          result.style.display = "block";
+          clearTimeout(timeout);
+          timeout = setTimeout(() => StrengthChecker(password.value), 2000);
+          if (password.value.length !== 0) {
+            result.style.display != "block";
+          } else {
+            result.style.display = "none";
+          }
+        });
+      }
+    </script>
+  </body> -->

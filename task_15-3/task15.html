@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+    <style>
+      form {
+        font-size: large;
+      }
+      form legend {
+        color: black;
+        text-align: center;
+      }
+      form label {
+        text-align: justify;
+      }
+      input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+      }
+      input[type="submit"] {
+        background-color: rgb(12, 91, 218);
+        color: white;
+      }
+      input[type="submit"]:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <legend><h1>Register With Us</h1></legend>
+      <br /><br />
+      <label for="uname">Username</label><br />
+      <input type="text" name="uname" id="uname" />
+      <span id="unameMsg"> </span>
+      <br />
+      <br />
+      <label for="email">Email</label><br />
+      <input type="email" name="email" id="email" />
+      <span id="emailMsg"></span>
+      <br />
+      <br />
+      <label for="pwd">Password</label><br />
+      <input type="password" name="pwd" id="pwd" />
+      <br />
+      <br />
+      <label for="pwdc">Confirm Password</label><br />
+      <input type="password" name="pwdc" id="pwdc" />
+      <span id="pwdcMsg"></span>
+      <br />
+      <br />
+      <input type="submit" onclick="lightUp(); event.preventDefault()" />
+    </form>
+
+    <script>
+      function lightUp() {
+        var uname = document.getElementById("uname").value;
+        var email = document.getElementById("email").value;
+        var pwd = document.getElementById("pwd").value;
+        var pwdc = document.getElementById("pwdc").value;
+        var unamePattern = /[a-zA-Z]{3,}/g;
+        var emailPattern =
+          /^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z0-9-]+)*$/;
+
+        //for username
+        if (uname != uname.match(unamePattern)) {
+          document.getElementById("uname").style.borderColor = "red";
+          unameMsg.innerHTML =
+            '<span style="color: red">Username must be atleast 3 characters.</span>';
+        } else {
+          unameMsg.innerHTML = "<span> </span>";
+          document.getElementById("uname").style.borderColor = "green";
+        }
+
+        //for email
+        if (email != email.match(emailPattern)) {
+          document.getElementById("email").style.borderColor = "red";
+          emailMsg.innerHTML =
+            '<span style="color: red">Email is not valid.</span>';
+        } else {
+          emailMsg.innerHTML = "<span> </span>";
+          document.getElementById("email").style.borderColor = "green";
+        }
+        //for password confirmation
+        if (pwdc == pwd) {
+          document.getElementById("pwdc").style.borderColor = "green";
+          document.getElementById("pwd").style.borderColor = "green";
+          pwdcMsg.innerHTML = "<span> </span>";
+        } else {
+          document.getElementById("pwdc").style.borderColor = "red";
+          pwdcMsg.innerHTML =
+            '<span style="color:red">Passwords do not match.</span>';
+        }
+
+        //for final submit button
+        if (
+          uname == uname.match(unamePattern) &&
+          email == email.match(emailPattern) &&
+          pwdc == pwd
+        ) {
+          alert("Data Submitted.");
+        }
+      }
+    </script>
+  </body>
+</html>

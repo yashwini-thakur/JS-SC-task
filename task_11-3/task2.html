@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2</title>
+  </head>
+  <body>
+    <h1>Please check the output in console.</h1>
+    <script>
+      var n = 5;
+      var pattern = "";
+      for (var i = 1; i <= n; i++) {
+        for (var k = 0; k < n - i; k++) {
+          pattern += " ";
+        }
+        for (var j = 0; j < 2 * i - 1; j++) {
+          if (i === 0 || i === n) {
+            pattern += "*";
+          } else {
+            if (j === 0 || j === 2 * i - 2) {
+              pattern += "*";
+            } else {
+              pattern += " ";
+            }
+          }
+        }
+        pattern += "\n";
+      }
+      console.log(pattern);
+    </script>
+  </body>
+</html>

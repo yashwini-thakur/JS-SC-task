@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3</title>
+  </head>
+  <body>
+    <h1>Please check the output in console.</h1>
+    <h1>Task 3</h1>
+    <script>
+      let nums = [11, 22, 33, 46, 75, 86, 97, 98];
+      function evenNo(n) {
+        if (n % 2 == 0) {
+          return n;
+        }
+      }
+      const new_nums = nums.filter(evenNo);
+      console.log("original array", new_nums);
+      function sqr(n) {
+        return n * n;
+      }
+      var squaredEvenNums = new_nums.map(sqr);
+      console.log("final array(squaredEvenNums)", squaredEvenNums);
+    </script>
+  </body>
+</html>

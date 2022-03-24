@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+    <style>
+      form {
+        margin-left: 400px;
+        margin-right: 400px;
+        font-size: larger;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>AutoFill Form</legend>
+        <fieldset>
+          <legend>Primary Address</legend>
+          <label for="address1">Address:</label>
+          <input
+            type="text"
+            name="address1"
+            id="address1"
+            required
+          /><br /><br />
+          <label for="zip1">Zip code:</label>
+          <input
+            type="text"
+            name="zip1"
+            id="zip1"
+            pattern="[0-9]{6}"
+            required
+          /><br />
+        </fieldset>
+        <br /><br />
+        <span style="font-size: medium; color: darkslategrey"
+          ><input type="checkbox" id="check" onchange="autofill()" />If same
+          secondary address select this box.</span
+        >
+        <fieldset>
+          <legend>Secondary Address</legend>
+          <label for="address2">Address:</label>
+          <input
+            type="text"
+            name="address2"
+            id="address2"
+            required
+          /><br /><br />
+          <label for="zip2">Zip code:</label>
+          <input
+            type="text"
+            name="zip2"
+            id="zip2"
+            pattern="[0-9]{6}"
+            required
+          /><br />
+        </fieldset>
+        <br /><br />
+        <input type="submit" value="Submit" />
+      </fieldset>
+    </form>
+
+    <script>
+      function autofill() {
+        if (document.getElementById("check").checked) {
+          document.getElementById("address2").value =
+            document.getElementById("address1").value;
+          document.getElementById("zip2").value =
+            document.getElementById("zip1").value;
+        } else {
+          document.getElementById("address2").value = "";
+          document.getElementById("zip2").value = "";
+        }
+      }
+    </script>
+  </body>
+</html>

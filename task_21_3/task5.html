@@ -1,0 +1,40 @@
+<!-- Write a JavaScript function that accepts two arguments, a string and a letter and the
+function will count the number of occurrences of the specified letter within the string. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 5</title>
+  </head>
+  <body>
+    <h3>Enter a string.</h3>
+    <input type="text" id="demo" />
+    <h3>
+      Enter a letter whose number of occurence you want to know in the above
+      string.
+    </h3>
+    <input type="text" id="demo1" />
+    <h3>
+      Click below to see the number of occurences of the letter you specified in
+      above string.
+    </h3>
+    <button onclick="myfunc()">Click</button>
+    <div id="result"></div>
+  </body>
+  <script>
+    function myfunc() {
+      var str = document.getElementById("demo").value;
+      var letter = document.getElementById("demo1").value;
+      var charCount = 0;
+      for (index = 0; index < str.length; index++) {
+        if (str.charAt(index) == letter) {
+          charCount += 1;
+        }
+      }
+      document.getElementById("result").innerHTML =
+        "Occurence of " + letter + " in written string is: " + charCount;
+    }
+  </script>
+</html>

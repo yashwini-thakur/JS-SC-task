@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2</title>
+  </head>
+  <body>
+    <h1>Please check the output in console.</h1>
+    <h1>Task 2</h1>
+    <script>
+      const num = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+      //for odd number
+      console.log("original array:", num);
+      function Odd(n) {
+        if (n % 2 != 0) {
+          return n;
+        }
+      }
+      const odd_arr = num.filter(Odd);
+      console.log("Odd numbers:", odd_arr);
+
+      //for numbers divisible by 2  or 5
+
+      function div_2_5(n) {
+        if (n % 2 == 0 || n % 5 == 0) {
+          return n;
+        }
+      }
+      const divisible_2_5 = num.filter(div_2_5);
+      console.log("Divisible by 2 or 5:", divisible_2_5);
+
+      //for numbers divisible by 3 and then squared
+
+      function div_3(n) {
+        if (n % 3 == 0) {
+          return n;
+        }
+      }
+      const divisible_3 = num.filter(div_3);
+      //console.log(divisible_3);
+
+      function sqr(n) {
+        return n * n;
+      }
+      const sqr_3 = divisible_3.map(sqr);
+      console.log("Divisible by 3 and then squared:", sqr_3);
+
+      //sum of square of numbers divisible by 5
+      function div_5(n) {
+        if (n % 5 == 0) {
+          return n;
+        }
+      }
+      const divisible_5 = num.filter(div_5);
+      //console.log(divisible_5);
+      const sqr_5 = divisible_5.map(sqr);
+      //console.log(sqr_5);
+
+      function sum_5(a, b) {
+        return a + b;
+      }
+      var summing_5 = sqr_5.reduce(sum_5);
+      console.log("sum of square of no. divisible by 5:", summing_5);
+    </script>
+  </body>
+</html>
