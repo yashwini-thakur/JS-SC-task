@@ -1,0 +1,37 @@
+<!-- There are two arrays with individual values. Write a JavaScript program to compute the sum
+of each individual index value from the given arrays. Sample array: array1 = [1,0,2,3,4];
+array2 = [3,5,6,7,8,13]; Expected Output: [4, 5, 8, 10, 12, 13] -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 4</title>
+  </head>
+  <body>
+    <script>
+      var array1 = [1, 0, 2, 3, 4];
+      console.log("Array1:", array1);
+      var array2 = [3, 5, 6, 7, 8, 13];
+      console.log("Array2:", array2);
+      var array3 = [];
+      var count = 0;
+      var x = 0;
+      while (count < array1.length && count < array2.length) {
+        array3.push(array1[count] + array2[count]);
+        count++;
+      }
+      if (count === array1.length) {
+        for (x = count; x < array2.length; x++) {
+          array3.push(array2[x]);
+        }
+      } else {
+        for (x = count; x < array1.length; x++) {
+          result.push(array1[x]);
+        }
+      }
+      console.log("Final Array with sum:", array3);
+    </script>
+  </body>
+</html>

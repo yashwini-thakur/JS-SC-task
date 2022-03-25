@@ -16,32 +16,56 @@ Then, this average is used to determine the corresponding grade. -->
       th {
         text-align: center;
         border: 2px solid black;
+        padding: 10px;
       }
     </style>
   </head>
   <body>
     <table>
+      <caption>
+        For Student A
+      </caption>
       <tr>
-        <th>Student Name</th>
-        <th>Marks(out of 100)</th>
-        <th>Grade</th>
-      </tr>
-      <tr>
-        <td>Kashish</td>
+        <td>Marks1</td>
         <td>90</td>
-        <td id="kashu"></td>
       </tr>
       <tr>
-        <td>Manya</td>
-        <td>30</td>
-        <td id="manya"></td>
+        <td>Marks2</td>
+        <td>80</td>
       </tr>
       <tr>
-        <td>Aditi</td>
-        <td>65</td>
-        <td id="aditi"></td>
+        <td>Marks3</td>
+        <td>70</td>
+      </tr>
+      <tr>
+        <td>Marks4</td>
+        <td>60</td>
       </tr>
     </table>
-    <script></script>
+    <script>
+      var marks = [
+        ["marks1", 90],
+        ["marks2", 80],
+        ["marks3", 70],
+        ["marks4", 60],
+      ];
+      var avgmark = 0;
+      for (var i = 0; i < marks.length; i++) {
+        avgmark += marks[i][1];
+        var avg = avgmark / marks.length;
+      }
+      console.log("Average Marks:", avg);
+      if (avg < 60) {
+        console.log("Grade F");
+      } else if (avg < 70) {
+        console.log("Grade D");
+      } else if (avg < 80) {
+        console.log("Grade C");
+      } else if (avg < 90) {
+        console.log("Grade B");
+      } else if (avg < 100) {
+        console.log("Grade A");
+      }
+    </script>
   </body>
 </html>

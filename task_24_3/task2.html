@@ -11,11 +11,36 @@ html code for the inputs. Eg: character 'e' in 'abcbcddea'-->
   <body>
     <h3>Enter a string.</h3>
     <input type="text" id="demo" />
-    <h3>First non repeated character is:</h3>
-    <h3 id="demo1"></h3>
+    <br /><br />
+    <button onclick="norepeat()">
+      Click here to find first non repeated character
+    </button>
+    <h3>
+      First non repeated character in given string is: <span id="demo1"></span>
+    </h3>
 
     <script>
-      var str = document.getElementById("demo").value;
+      function norepeat(str) {
+        var str = document.getElementById("demo").value;
+        var strsplit = str.split("");
+        var result = "";
+        var count = 0;
+        for (var i = 0; i < strsplit.length; i++) {
+          count = 0;
+          for (var j = 0; j < strsplit.length; j++) {
+            if (strsplit[i] === strsplit[j]) {
+              count += 1;
+            }
+          }
+          if (count < 2) {
+            result = strsplit[i];
+            document.getElementById("demo1").innerHTML = result;
+            break;
+          }
+        }
+        return result;
+        document.getElementById("demo1").innerHTML = result;
+      }
     </script>
   </body>
 </html>

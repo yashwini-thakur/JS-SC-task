@@ -1,0 +1,45 @@
+<!-- Write a JavaScript program to display the reading status (i.e. display bookname,
+author name and reading status) of the following books.
+Books:
+1. Title= 'Bill Gates', Author= 'The Road Ahead'
+2. Title= 'Steve Jobs', Author= 'Walter Isaacson'
+3. Title= 'Mockingjay: The Final Book of The Hunger Games', Author=
+'Suzanne Collins' -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 5</title>
+  </head>
+  <body>
+    <script>
+      var books = [
+        {
+          title: "Bill Gates",
+          Author: "The Road Ahead",
+          readingStatus: true,
+        },
+        {
+          title: "Steve Jobs",
+          Author: "Walter Isaacson",
+          readingStatus: false,
+        },
+        {
+          title: "Mockingjay:The Final Book of The Hunger Games",
+          Author: "Suzanne Collins",
+          readingStatus: true,
+        },
+      ];
+      for (var i = 0; i < books.length; i++) {
+        var bookName = '"' + books[i].title + '"' + " by " + books[i].Author;
+        if (books[i].readingStatus) {
+          console.log("Already read", bookName);
+        } else {
+          console.log("Continue reading", bookName);
+        }
+      }
+    </script>
+  </body>
+</html>
